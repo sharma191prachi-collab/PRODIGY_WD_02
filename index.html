@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Tic Tac Toe</h1>
+
+<div class="board">
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+    <div onclick="play(this)"></div>
+</div>
+
+<button onclick="restart()">Restart</button>
+
+<script>
+let turn = "X";
+
+function play(box){
+    if(box.innerHTML == ""){
+        box.innerHTML = turn;
+        turn = (turn == "X") ? "O" : "X";
+    }
+}
+
+function restart(){
+    let boxes = document.querySelectorAll(".board div");
+    boxes.forEach(box => box.innerHTML = "");
+    turn = "X";
+}
+</script>
+
+</body>
+</html>
